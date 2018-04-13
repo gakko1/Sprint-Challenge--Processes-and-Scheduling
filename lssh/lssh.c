@@ -89,6 +89,12 @@ int main(void)
             break;
         }
 
+        if (strcmp(args[0], "cd") == 0 && args[1]) 
+        {
+          chdir(args[1]);
+          continue;
+        }
+
         pid_t pid = fork();
         if (pid == -1)
         {
